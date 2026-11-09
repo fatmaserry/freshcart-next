@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@import "../styles/palette.css";
+@import "../styles/themes.css";
+@import "../styles/motion.css";
+
+@theme inline {
+  --color-surface-page: var(--fc-surface-page);
+  --color-surface-card: var(--fc-surface-card);
+  --color-surface-alt: var(--fc-surface-alt);
+  --color-surface-muted: var(--fc-surface-muted);
+  --color-body: var(--fc-text-body);
+  --color-muted: var(--fc-text-muted);
+  --color-hint: var(--fc-text-hint);
+  --color-line-soft: var(--fc-line-soft);
+  --color-line-strong: var(--fc-line-strong);
+  --color-surface-media: var(--fc-surface-media);
+  --color-surface-footer: var(--fc-surface-footer);
+  --color-footer: var(--fc-text-footer);
+  --color-heading: var(--fc-text-heading);
+
+  --color-brand-50: var(--fc-brand-50);
+  --color-brand-100: var(--fc-brand-100);
+  --color-brand-200: var(--fc-brand-200);
+  --color-brand-300: var(--fc-brand-300);
+  --color-brand-400: var(--fc-brand-400);
+  --color-brand-500: var(--fc-brand-500);
+  --color-brand-600: var(--fc-brand-600);
+  --color-brand-700: var(--fc-brand-700);
+  --color-brand-800: var(--fc-brand-800);
+  --color-brand-900: var(--fc-brand-900);
+}
+
+@theme {
+  --font-sans: var(--font-exo), ui-sans-serif, system-ui, sans-serif;
+  --animate-fade-in: fade-in 0.35s ease-out both;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    background: var(--fc-surface-page);
+    color: var(--fc-text-body);
+    font-weight: 500;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--fc-text-heading);
+  }
+
+  ::selection {
+    background: var(--fc-brand-200);
+    color: var(--fc-text-heading);
+  }
+
+  button:not(:disabled),
+  [role="button"],
+  select:not(:disabled),
+  summary,
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled),
+  label:has(input[type="checkbox"]:not(:disabled)),
+  label:has(input[type="radio"]:not(:disabled)),
+  label[for="terms"] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  select:disabled,
+  input:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.container-page {
+  @apply container mx-auto px-4;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+:root {
+  --toastify-color-light: var(--fc-surface-card);
+  --toastify-text-color-light: var(--fc-text-heading);
+  --toastify-color-success: var(--fc-brand-600);
+  --toastify-color-progress-success: var(--fc-brand-600);
+  --toastify-font-family: var(--font-exo), ui-sans-serif, system-ui, sans-serif;
+}

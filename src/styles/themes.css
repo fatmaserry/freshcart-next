@@ -1,0 +1,64 @@
+:root {
+  --fc-surface-page: light-dark(var(--fc-gray-0), var(--fc-night-900));
+  --fc-surface-card: light-dark(var(--fc-gray-0), var(--fc-night-850));
+  --fc-surface-alt: light-dark(var(--fc-gray-50), var(--fc-night-800));
+  --fc-surface-muted: light-dark(var(--fc-gray-100), var(--fc-night-750));
+  --fc-text-heading: light-dark(var(--fc-gray-900), var(--fc-night-100));
+  --fc-text-body: light-dark(var(--fc-gray-700), var(--fc-night-200));
+  --fc-text-muted: light-dark(var(--fc-gray-500), var(--fc-night-300));
+  --fc-text-hint: light-dark(var(--fc-gray-400), var(--fc-night-400));
+  --fc-line-soft: light-dark(var(--fc-gray-100), var(--fc-night-700));
+  --fc-line-strong: light-dark(var(--fc-gray-200), var(--fc-night-600));
+  --fc-surface-media: light-dark(#ffffff, #f3f4f6);
+  --fc-logo-text: light-dark(#21313c, var(--fc-night-100));
+  --fc-surface-footer: light-dark(var(--fc-gray-900), var(--fc-night-950));
+  --fc-text-footer: light-dark(var(--fc-gray-400), var(--fc-night-300));
+
+  --fc-brand-50: light-dark(var(--fc-green-50), #0d2a18);
+  --fc-brand-100: light-dark(var(--fc-green-100), #11351f);
+  --fc-brand-200: light-dark(var(--fc-green-200), #14532d);
+  --fc-brand-300: light-dark(var(--fc-green-300), #15803d);
+  --fc-brand-400: light-dark(var(--fc-green-400), #22c55e);
+  --fc-brand-500: light-dark(var(--fc-green-500), var(--fc-green-400));
+  --fc-brand-600: light-dark(var(--fc-green-600), var(--fc-green-500));
+  --fc-brand-700: light-dark(var(--fc-green-700), var(--fc-green-400));
+  --fc-brand-800: light-dark(var(--fc-green-800), var(--fc-green-300));
+  --fc-brand-900: light-dark(var(--fc-green-900), var(--fc-green-200));
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Tailwind's pale status fills would glare on dark surfaces. */
+  --color-red-50: color-mix(in oklab, #ef4444 14%, transparent);
+  --color-red-100: color-mix(in oklab, #ef4444 22%, transparent);
+  --color-red-200: color-mix(in oklab, #ef4444 35%, transparent);
+  --color-red-600: #f87171;
+  --color-red-700: #fca5a5;
+  --color-green-50: color-mix(in oklab, #22c55e 14%, transparent);
+  --color-green-700: #86efac;
+  --color-green-800: #bbf7d0;
+  --color-amber-50: color-mix(in oklab, #f59e0b 14%, transparent);
+  --color-amber-600: #fbbf24;
+  --color-amber-700: #fcd34d;
+  --color-orange-50: color-mix(in oklab, #f97316 16%, transparent);
+  --color-orange-100: color-mix(in oklab, #f97316 24%, transparent);
+  --color-green-100: color-mix(in oklab, #22c55e 24%, transparent);
+  --color-emerald-50: color-mix(in oklab, #10b981 14%, transparent);
+  --color-emerald-100: color-mix(in oklab, #10b981 22%, transparent);
+  --color-emerald-200: color-mix(in oklab, #10b981 30%, transparent);
+  --color-teal-200: color-mix(in oklab, #14b8a6 30%, transparent);
+  --color-emerald-600: #34d399;
+  --color-teal-50: color-mix(in oklab, #14b8a6 14%, transparent);
+  --color-violet-600: #a78bfa;
+  --color-blue-50: color-mix(in oklab, #3b82f6 16%, transparent);
+  --color-blue-700: #93c5fd;
+  --color-blue-100: color-mix(in oklab, #3b82f6 24%, transparent);
+  --color-amber-100: color-mix(in oklab, #f59e0b 24%, transparent);
+  --color-purple-50: color-mix(in oklab, #a855f7 16%, transparent);
+  --color-violet-200: color-mix(in oklab, #8b5cf6 40%, transparent);
+}

@@ -1,0 +1,41 @@
+:root {
+  --fc-green-50: #f0fdf4;
+  --fc-green-100: #dcfce7;
+  --fc-green-200: #bbf7d0;
+  --fc-green-300: #86efac;
+  --fc-green-400: #4ade80;
+  --fc-green-500: #22c55e;
+  --fc-green-600: #16a34a;
+  --fc-green-700: #15803d;
+  --fc-green-800: #14532d;
+  --fc-green-900: #134e28;
+
+  --fc-red-300: #fca5a5;
+  --fc-red-400: #f87171;
+  --fc-red-500: #ef4444;
+  --fc-red-600: #dc2626;
+
+  --fc-gray-0: #ffffff;
+  --fc-gray-50: #f9fafb;
+  --fc-gray-100: #f3f4f6;
+  --fc-gray-200: #e5e7eb;
+  --fc-gray-400: #99a1af;
+  --fc-gray-500: #6a7282;
+  --fc-gray-700: #364153;
+  --fc-gray-900: #101828;
+
+  --fc-night-950: #070b14;
+  --fc-night-900: #0b111e;
+  --fc-night-850: #131b2a;
+  --fc-night-800: #1a2333;
+  --fc-night-750: #1e2939;
+  --fc-night-700: #263244;
+  --fc-night-600: #364153;
+  --fc-night-400: #6a7282;
+  --fc-night-300: #99a1af;
+  --fc-night-200: #d1d5dc;
+  --fc-night-100: #f3f4f6;
+
+  --fc-violet-600: oklch(54.1% 0.281 293.009);
+  --fc-emerald-600: oklch(59.6% 0.145 163.225);
+}
