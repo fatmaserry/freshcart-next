@@ -57,8 +57,6 @@ Cart and wishlist reads use `GET /api/cart` and `GET /api/wishlist` instead of s
 
 `proxy.ts` protects `/checkout`, `/orders` and `/profile`, and keeps signed-in users off the login pages.
 
-The phone number sits in the encrypted session because the API never returns it. Don't put anything personal in `localStorage`.
-
 ## Rules
 
 - Raw `fetch` is only allowed in `HttpClient`.

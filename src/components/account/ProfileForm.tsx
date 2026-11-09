@@ -21,7 +21,7 @@ import {
 } from "./SettingsSection";
 
 export function ProfileForm() {
-  const { user, refreshUser } = useAuth();
+  const { user, updateUser } = useAuth();
   const form = useForm<ProfileValues>({
     resolver: zodResolver(profileSchema),
     defaultValues: { name: "", email: "", phone: "" },
@@ -33,15 +33,13 @@ export function ProfileForm() {
       form.reset({
         name: user.name,
         email: user.email,
-        phone: user.phone ?? "",
+        phone: "",
       });
   }, [user, form]);
 
   const mutation = useUpdateMe({
-    onSuccess: () => {
-      const v = form.getValues();
-      refreshUser();
-      form.reset(v);
+    onSuccess: ({ user: updated }) => {
+      updateUser({ name: updated.name, email: updated.email });
       toast.success("Profile updated");
     },
   });

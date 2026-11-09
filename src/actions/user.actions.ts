@@ -18,13 +18,4 @@ export const changePasswordAction = async (payload: ChangePasswordPayload) =>
   });
 
 export const updateMeAction = async (payload: Partial<UpdateMePayload>) =>
-  runAction(async () => {
-    const res = await serverApi.users.updateMe(payload);
-    // The API never returns the phone, so the session is its only home.
-    await unstable_update({
-      name: res.user.name,
-      email: res.user.email,
-      phone: payload.phone,
-    } as never);
-    return res;
-  });
+  runAction(() => serverApi.users.updateMe(payload));

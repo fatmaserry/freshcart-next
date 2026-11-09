@@ -37,7 +37,7 @@ interface AuthContextValue {
     successMessage?: string;
   }) => Promise<void>;
   signOut: (opts?: { silent?: boolean }) => void;
-  refreshUser: () => void;
+  updateUser: (user: { name: string; email: string }) => void;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -103,7 +103,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [update, mergeGuest, clearAccountCaches],
   );
 
-  const refreshUser = useCallback(() => void update(), [update]);
+  const updateUser = useCallback(
+    (user: { name: string; email: string }) => void update(user),
+    [update],
+  );
 
   const value = useMemo<AuthContextValue>(() => {
     const u = session?.user;
@@ -114,7 +117,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             name: u.name,
             email: u.email,
             role: u.role,
-            phone: u.phone,
           }
         : null,
       userId: u?.id ?? null,
@@ -122,9 +124,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       isAuthenticated: mounted && status === "authenticated",
       signIn,
       signOut,
-      refreshUser,
+      updateUser,
     };
-  }, [session, status, mounted, signIn, signOut, refreshUser]);
+  }, [session, status, mounted, signIn, signOut, updateUser]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

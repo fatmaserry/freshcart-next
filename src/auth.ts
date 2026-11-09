@@ -51,14 +51,12 @@ export const authConfig = {
         const {
           name,
           email,
-          phone,
           token: routeToken,
         } = session as Partial<typeof token.user>;
         token.user = {
           ...token.user,
           ...(name && { name }),
           ...(email && { email }),
-          ...(phone && { phone }),
           ...(routeToken && { token: routeToken }),
         };
       }
@@ -69,8 +67,8 @@ export const authConfig = {
     // The Route token stays server-side; only profile fields may reach the browser.
     session({ session, token }) {
       if (token.user) {
-        const { id, name, email, role, phone } = token.user;
-        session.user = { ...session.user, id, name, email, role, phone };
+        const { id, name, email, role } = token.user;
+        session.user = { ...session.user, id, name, email, role };
       }
       return session;
     },
